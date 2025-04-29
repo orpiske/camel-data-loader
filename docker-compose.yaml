@@ -46,12 +46,6 @@ services:
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
       KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-  ollama:
-    image: ollama/ollama
-    ports:
-      - "8000:8000"
-    environment:
-      OLLAMA_HOST: ":8000"
   qdrant:
     image: qdrant/qdrant:v1.13.6-unprivileged
     ports:
@@ -59,19 +53,6 @@ services:
       - "6334:6334"
     volumes:
       - ./qdrant_storage:/qdrant/storage:z
-  backend:
-    image: quay.io/megacamelus/assistant-backend
-    depends_on:
-      - ollama
-      - qdrant
-    ports:
-      - "8080:8080"
-    environment:
-      API_ENDPOINT: "http://ollama:8000/"
-      API_TIMEOUT: "110s"
-      QDRANT_HOST: "qdrant"
-      #      If you are on Linux with good resources, you may try different models. For mac, anything else times out
-      CHAT_MODEL: "orca-mini"
   ingestion-sink:
     image: quay.io/megacamelus/assistant-ingestion-sink
     depends_on:
@@ -88,11 +69,3 @@ services:
       - "8083:8083"
     environment:
       KAFKA_BROKERS: "kafka:9092"
-  ui:
-    image: quay.io/megacamelus/assistant-ui-vaadin
-    depends_on:
-      - backend
-    ports:
-      - "8081:8081"
-    environment:
-      BACKEND_HOST: "http://backend:8080"
