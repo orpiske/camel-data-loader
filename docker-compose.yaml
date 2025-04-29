@@ -60,6 +60,7 @@ services:
     environment:
       KAFKA_BROKERS: "kafka:9092"
       QDRANT_HOST: "qdrant"
+      CAMEL_ASSISTANT_QDRANT_SIZE: 768
   ingestion-source-plain-text:
     image: quay.io/megacamelus/plain-text-source
     depends_on:
