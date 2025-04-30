@@ -60,7 +60,6 @@
 
         <langchain4j.version>0.36.0</langchain4j.version>
         <picocli.version>4.7.5</picocli.version>
-        <vaadin.version>24.4.13</vaadin.version>
 
         <camel.version>4.8.6</camel.version>
 
@@ -244,11 +243,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
                     <version>${maven-enforcer-plugin-version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>com.vaadin</groupId>
-                    <artifactId>vaadin-maven-plugin</artifactId>
-                    <version>${vaadin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
