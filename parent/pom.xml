@@ -91,6 +91,14 @@
             </dependency>
 
             <dependency>
+                <groupId>dev.langchain4j</groupId>
+                <artifactId>langchain4j-bom</artifactId>
+                <version>${langchain4j.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
                 <groupId>io.quarkiverse.langchain4j</groupId>
                 <artifactId>quarkus-langchain4j-ollama</artifactId>
                 <version>${quarkus.langchain.version}</version>
@@ -116,31 +124,7 @@
                 <version>${quarkus.langchain.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>dev.langchain4j</groupId>
-                <artifactId>langchain4j-core</artifactId>
-                <version>${langchain4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>dev.langchain4j</groupId>
-                <artifactId>langchain4j-open-ai</artifactId>
-                <version>${langchain4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>dev.langchain4j</groupId>
-                <artifactId>langchain4j-ollama</artifactId>
-                <version>${langchain4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>dev.langchain4j</groupId>
-                <artifactId>langchain4j-qdrant</artifactId>
-                <version>${langchain4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>dev.langchain4j</groupId>
-                <artifactId>langchain4j-embeddings-all-minilm-l6-v2</artifactId>
-                <version>${langchain4j.version}</version>
-            </dependency>
+
 
             <dependency>
                 <groupId>com.vaadin</groupId>
