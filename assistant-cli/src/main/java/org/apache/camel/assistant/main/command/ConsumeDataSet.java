@@ -67,6 +67,7 @@ public class ConsumeDataSet extends BaseCommand {
                 final File file = files[i];
                 if (!file.getName().endsWith(".json")) {
                     System.err.printf("Skipping file %d of %d %s: it's not a dataset file%n", i, files.length, file);
+                    continue;
                 }
 
                 System.err.printf("Loading dataset file %d of %d %s%n", i, files.length, file);
