@@ -57,6 +57,7 @@ services:
     pull_policy: always
     depends_on:
       - kafka
+      - qdrant
     environment:
       KAFKA_BROKERS: "kafka:9092"
       QDRANT_HOST: "qdrant"
@@ -66,7 +67,6 @@ services:
     pull_policy: always
     depends_on:
       - kafka
-      - qdrant
     ports:
       - "8083:8083"
     environment:
