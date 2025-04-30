@@ -15,7 +15,6 @@
 ## limitations under the License.
 ## ---------------------------------------------------------------------------
 
-version: '3.4'
 services:
   zookeeper:
     image: quay.io/strimzi/kafka:latest-kafka-3.7.0
@@ -55,6 +54,7 @@ services:
       - ./qdrant_storage:/qdrant/storage:z
   ingestion-sink:
     image: quay.io/megacamelus/assistant-ingestion-sink
+    pull_policy: always
     depends_on:
       - kafka
     environment:
@@ -63,6 +63,7 @@ services:
       CAMEL_ASSISTANT_QDRANT_SIZE: 768
   ingestion-source-plain-text:
     image: quay.io/megacamelus/plain-text-source
+    pull_policy: always
     depends_on:
       - kafka
       - qdrant

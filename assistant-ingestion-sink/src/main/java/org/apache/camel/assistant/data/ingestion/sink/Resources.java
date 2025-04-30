@@ -18,7 +18,7 @@
 package org.apache.camel.assistant.data.ingestion.sink;
 
 import dev.langchain4j.model.embedding.EmbeddingModel;
-import dev.langchain4j.model.embedding.onnx.allminilml6v2.AllMiniLmL6V2EmbeddingModel;
+import dev.langchain4j.model.ollama.OllamaEmbeddingModel;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Produces;
@@ -28,6 +28,9 @@ public class Resources {
 
     @Produces
     EmbeddingModel model() {
-        return new AllMiniLmL6V2EmbeddingModel();
+        return OllamaEmbeddingModel.builder()
+                .baseUrl("http://camel-ai-dev-1.usersys.redhat.com:49090/")
+                .modelName("nomic-embed-text:latest")
+                .build();
     }
 }

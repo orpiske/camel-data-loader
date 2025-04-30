@@ -52,18 +52,14 @@
 
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
-        <quarkus.platform.version>3.15.4</quarkus.platform.version>
+        <quarkus.platform.version>3.20.0</quarkus.platform.version>
 
         <camel-quarkus.platform.group-id>${quarkus.platform.group-id}</camel-quarkus.platform.group-id>
         <camel-quarkus.platform.artifact-id>quarkus-camel-bom</camel-quarkus.platform.artifact-id>
         <camel-quarkus.platform.version>${quarkus.platform.version}</camel-quarkus.platform.version>
 
-        <langchain4j.version>0.36.0</langchain4j.version>
+        <langchain4j.version>0.36.2</langchain4j.version>
         <picocli.version>4.7.5</picocli.version>
-
-        <camel.version>4.8.6</camel.version>
-
-        <quarkus.langchain.version>0.20.3</quarkus.langchain.version>
 
         <quarkus.container-image.registry>quay.io</quarkus.container-image.registry>
         <quarkus.container-image.group>megacamelus</quarkus.container-image.group>
@@ -95,40 +91,6 @@
                 <version>${langchain4j.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>io.quarkiverse.langchain4j</groupId>
-                <artifactId>quarkus-langchain4j-ollama</artifactId>
-                <version>${quarkus.langchain.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.quarkiverse.langchain4j</groupId>
-                <artifactId>quarkus-langchain4j-redis</artifactId>
-                <version>${quarkus.langchain.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.quarkiverse.langchain4j</groupId>
-                <artifactId>quarkus-langchain4j-core</artifactId>
-                <version>${quarkus.langchain.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.quarkiverse.langchain4j</groupId>
-                <artifactId>quarkus-langchain4j-ollama-devservices</artifactId>
-                <version>${quarkus.langchain.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.quarkiverse.langchain4j</groupId>
-                <artifactId>quarkus-langchain4j-openai</artifactId>
-                <version>${quarkus.langchain.version}</version>
-            </dependency>
-
-
-
-            <dependency>
-                <groupId>com.vaadin</groupId>
-                <artifactId>vaadin-quarkus-extension</artifactId>
-                <version>${vaadin.version}</version>
             </dependency>
         </dependencies>
 
