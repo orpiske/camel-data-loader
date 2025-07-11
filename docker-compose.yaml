@@ -53,7 +53,7 @@ services:
     volumes:
       - ./qdrant_storage:/qdrant/storage:z
   ingestion-sink:
-    image: quay.io/orpiske/assistant-ingestion-sink
+    image: quay.io/orpiske/camel-data-loader-ingestion-sink
     pull_policy: always
     depends_on:
       - kafka
@@ -63,7 +63,7 @@ services:
       QDRANT_HOST: "qdrant"
       CAMEL_ASSISTANT_QDRANT_SIZE: 768
   ingestion-source-plain-text:
-    image: quay.io/orpiske/plain-text-source
+    image: quay.io/orpiske/camel-data-loader-plain-text-source
     pull_policy: always
     depends_on:
       - kafka
