@@ -19,6 +19,7 @@ package org.apache.camel.dataloader.data.ingestion.sink;
 
 import dev.langchain4j.model.embedding.EmbeddingModel;
 import dev.langchain4j.model.ollama.OllamaEmbeddingModel;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Produces;
@@ -26,11 +27,17 @@ import jakarta.enterprise.inject.Produces;
 @ApplicationScoped
 public class Resources {
 
+    @ConfigProperty(name = "camel.data.loader.embedding.provider.url", defaultValue = "http://localhost:8080")
+    String embeddedProviderUrl;
+
+    @ConfigProperty(name = "camel.data.loader.embedding.provider.modelName", defaultValue = "nomic-embed-text:latest")
+    String modelName;
+
     @Produces
     EmbeddingModel model() {
         return OllamaEmbeddingModel.builder()
-                .baseUrl("http://camel-ai-dev-1.usersys.redhat.com:49090/")
-                .modelName("nomic-embed-text:latest")
+                .baseUrl(embeddedProviderUrl)
+                .modelName(modelName)
                 .build();
     }
 }
