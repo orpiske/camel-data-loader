@@ -1,5 +1,22 @@
 # Camel Data
 
+## Run Ollama Locally
+
+We will run Ollama to serve the embedding model.
+
+1. Install and run Ollama (or any other OpenAI compatible API in a host accessible from the containers)
+
+```shell
+ollama serve
+```
+
+2. Pull the `mistral:latest` model on the host you are running Ollama
+
+```shell
+ollama pull nomic-embed-text:latest
+```
+
+
 ## Trying it using Docker Compose
 
 1. Start the containers using Docker Compose
@@ -78,10 +95,10 @@ huggingface-cli download --repo-type dataset --local-dir camel-components megaca
 Use this command to load the dataset into the DB:
 
 ```shell
-java -jar target/quarkus-app/quarkus-run.jar consume dataset --path ~/code/datasets/camel-dataformats/ --source org.apache.camel
-java -jar target/quarkus-app/quarkus-run.jar consume dataset --path ~/code/datasets/camel-components/ --source org.apache.camel
-java -jar target/quarkus-app/quarkus-run.jar consume dataset --path ~/code/datasets/camel-eips/ --source org.apache.camel
-java -jar target/quarkus-app/quarkus-run.jar consume dataset --path ~/code/datasets/camel-languages/ --source org.apache.camel
+java -jar camel-data-loader-cli/target/quarkus-app/quarkus-run.jar consume dataset --path ~/code/datasets/camel-dataformats/ --source org.apache.camel
+java -jar camel-data-loader-cli/target/quarkus-app/quarkus-run.jar consume dataset --path ~/code/datasets/camel-components/ --source org.apache.camel
+java -jar camel-data-loader-cli/target/quarkus-app/quarkus-run.jar consume dataset --path ~/code/datasets/camel-eips/ --source org.apache.camel
+java -jar camel-data-loader-cli/target/quarkus-app/quarkus-run.jar consume dataset --path ~/code/datasets/camel-languages/ --source org.apache.camel
 ```
 
 ## Checking if the data was loaded
