@@ -8,12 +8,6 @@ updates:
       timezone: Europe/Paris
     labels:
       - area/dependencies
-    ignore:
-      - dependency-name: io.quarkus:*
-      - dependency-name: org.apache.camel:*
-      - dependency-name: org.apache.camel.k:*
-      - dependency-name: org.apache.camel.quarkus:*
-      - dependency-name: org.apache.camel.kamelets:*
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:

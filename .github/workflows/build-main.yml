@@ -8,8 +8,6 @@ on:
 
 env:
   PROJECTS: ${{ github.workspace }}
-  BACKEND_IMAGE: "quay.io/megacamelus/assistant-backend"
-  FRONTEND_IMAGE: "quay.io/megacamelus/assistant-ui-vaadin"
 
 jobs:
   build:
@@ -35,65 +33,5 @@ jobs:
       run: |
         mvn -B install \
           -Dquarkus.container-image.build=true \
-          -Dquarkus.container-image.push=true
-
-  pr:
-    runs-on: ubuntu-latest
-    needs:
-      - build
-    steps:
-      - name: "Checkout - Camel Assistant Manifests"
-        uses: actions/checkout@v4
-        with:
-          repository: megacamelus/camel-assistant-manifests
-          token: ${{ secrets.PR_TOKEN }}
-
-      - name: "Determine Container image name"
-        id: "compute-image-name"
-        run: |
-          BACKEND_IMAGE_DIGEST=$(docker run --rm gcr.io/go-containerregistry/crane digest ${BACKEND_IMAGE}:latest)
-          BACKEND_IMAGE_NAME="${BACKEND_IMAGE}@${BACKEND_IMAGE_DIGEST}"
-
-          FRONTEND_IMAGE_DIGEST=$(docker run --rm gcr.io/go-containerregistry/crane digest ${FRONTEND_IMAGE}:latest)
-          FRONTEND_IMAGE_NAME="${FRONTEND_IMAGE}@${FRONTEND_IMAGE_DIGEST}"
-          
-          echo "backend-image=${BACKEND_IMAGE_NAME}" >> "$GITHUB_OUTPUT"
-          echo "frontend-image=${FRONTEND_IMAGE_NAME}" >> "$GITHUB_OUTPUT"
-
-      - name: "Create PR for camel-assistant-manifests"
-        env:
-          GH_TOKEN: ${{ secrets.PR_TOKEN }}
-          BACKEND_IMAGE_NAME:  ${{ steps.compute-image-name.outputs.backend-image }}
-          FRONTEND_IMAGE_NAME:  ${{ steps.compute-image-name.outputs.frontend-image }}
-          BRANCH_NAME: ci-${{ github.run_id }}
-        run: |
-          echo "###############################################################################"
-          echo "backend image  : ${BACKEND_IMAGE_NAME}"
-          echo "frontend image : ${FRONTEND_IMAGE_NAME}"
-          echo "branch         : ${BRANCH_NAME}"
-          echo "###############################################################################"
-
-          tree .
-
-          (cd etc/kubernetes/apps/assistant && kustomize edit set image ${BACKEND_IMAGE_NAME})
-          (cd etc/kubernetes/apps/assistant && kustomize edit set image ${FRONTEND_IMAGE_NAME})
-          
-          cat etc/kubernetes/apps/assistant/kustomization.yaml
-
-          git checkout -b "${BRANCH_NAME}"
-          git config user.email "megacamelus@megacamelus.github.com"
-          git config user.name "megacamelus"
-          git commit -m "Update assistant images" etc/kubernetes/apps/assistant/kustomization.yaml
-          git reset --hard
-          git push -u origin ${BRANCH_NAME}
-
-          # GH CLI can't find the branch on remote... needs some time :)
-          sleep 15
-
-          gh config set prompt disabled
-
-          gh pr create \
-            --fill \
-            --base main \
-            --title "chore(assistant): update assistant images" \
-            --body "backend-image: ${BACKEND_IMAGE_NAME}, frontend-image: ${FRONTEND_IMAGE_NAME}"
+          -Dquarkus.container-image.push=true \
+          -Dquarkus.container-image.additional-tags=${{ github.ref_name }}

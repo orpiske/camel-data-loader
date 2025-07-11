@@ -4,6 +4,15 @@ on:
   pull_request:
     branches:
       - "main"
+    paths-ignore:
+      - .github/**
+      - docs/**
+      - README.md
+      - docker-*
+      - index.md
+      - Makefile
+      - LICENSE
+
 jobs:
   build:
 
