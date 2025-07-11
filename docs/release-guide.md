@@ -4,4 +4,4 @@
 3. `mvn release:clean`
 4. `mvn --batch-mode -Dtag=camel-data-loader-${CURRENT_DEVELOPMENT_VERSION} release:prepare -DreleaseVersion=${CURRENT_DEVELOPMENT_VERSION} -DdevelopmentVersion=${NEXT_DEVELOPMENT_VERSION}-SNAPSHOT`
 5. `mvn -Pdist release:perform -Dgoals=install`
-6. `git checkout camel-data-loader-${CURRENT_DEVELOPMENT_VERSION} && jreleaser full-release -Djreleaser.project.version=${CURRENT_DEVELOPMENT_VERSION}`
+6. `git checkout camel-data-loader-${CURRENT_DEVELOPMENT_VERSION} && mvn -Pdist clean package && jreleaser full-release -Djreleaser.project.version=${CURRENT_DEVELOPMENT_VERSION}`
