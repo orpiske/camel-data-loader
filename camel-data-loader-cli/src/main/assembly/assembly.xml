@@ -28,7 +28,7 @@
             <outputDirectory>./</outputDirectory>
             <includes>
                 <include>**/*.*</include>
-                <include>**/wanaku</include>
+                <include>**/camel-data-loader</include>
             </includes>
             <fileMode>0755</fileMode>
         </fileSet>
