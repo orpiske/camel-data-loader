@@ -26,6 +26,24 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Camel Data Loader</name>
+    <inceptionYear>2025</inceptionYear>
+    <url>https://github.com/orpiske/camel-data-loader</url>
+    <description>Camel Data Loader</description>
+
+    <scm>
+        <connection>scm:git:https://github.com/orpiske/camel-data-loader.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/orpiske/camel-data-loader.git</developerConnection>
+        <url>https://github.com/orpiske/camel-data-loader</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <licenses>
+        <license>
+            <name>Apache-2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
