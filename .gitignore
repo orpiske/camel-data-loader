@@ -67,3 +67,4 @@ pom.xml.next
 
 .run/*
 qdrant_storage
+out

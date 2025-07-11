@@ -1,0 +1,39 @@
+project:
+  name: Camel Data Loader
+  description: Camel Data Loader
+  longDescription: This project is an example of a data loader for Retrieval Augmented Generation (RAG) based on Apache Camel.
+
+  authors:
+    - Otavio R. Piske
+  license: Apache-2.0
+  links:
+    homepage: https://github.com/orpiske/camel-data-loader
+    bugTracker: https://github.com/orpiske/camel-data-loader/issues
+  languages:
+    java:
+      groupId: net.orpiske
+      version: 21
+  inceptionYear: 2025
+  tags:
+    - 'ai'
+    - 'java'
+    - 'agentic'
+    - 'agents'
+
+signing:
+  active: ALWAYS
+
+release:
+  github:
+    owner: orpiske
+    overwrite: false
+    issues:
+      enabled: true
+    update:
+      enabled: true
+
+distributions:
+  cli:
+    artifacts:
+      - path: camel-data-loader-cli/target/distributions/camel-data-loader-cli-{{projectVersion}}.zip
+    type: JAVA_BINARY
