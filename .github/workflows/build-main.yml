@@ -3,7 +3,10 @@ name: Build Main
 on:
   push:
     branches:
-      - "main"
+      - main
+      - release-prep
+    tags:
+      - camel-data-loader-*
 
 
 env:
