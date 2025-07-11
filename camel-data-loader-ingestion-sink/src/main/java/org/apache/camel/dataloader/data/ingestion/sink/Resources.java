@@ -27,10 +27,10 @@ import jakarta.enterprise.inject.Produces;
 @ApplicationScoped
 public class Resources {
 
-    @ConfigProperty(name = "camel.data.loader.embedding.provider.url", defaultValue = "http://localhost:8080")
+    @ConfigProperty(name = "camel.dataloader.embedding.provider.url", defaultValue = "http://localhost:11434")
     String embeddedProviderUrl;
 
-    @ConfigProperty(name = "camel.data.loader.embedding.provider.model.name", defaultValue = "nomic-embed-text:latest")
+    @ConfigProperty(name = "camel.dataloader.embedding.provider.model.name", defaultValue = "nomic-embed-text:latest")
     String modelName;
 
     @Produces
