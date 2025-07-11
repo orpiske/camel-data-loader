@@ -16,14 +16,12 @@
   ~ limitations under the License.
   -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>net.orpiske.camel.dataloader</groupId>
     <artifactId>camel-data-loader</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
     <name>Camel Data Loader</name>
     <inceptionYear>2025</inceptionYear>
@@ -34,7 +32,7 @@
         <connection>scm:git:https://github.com/orpiske/camel-data-loader.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/orpiske/camel-data-loader.git</developerConnection>
         <url>https://github.com/orpiske/camel-data-loader</url>
-        <tag>HEAD</tag>
+        <tag>camel-data-loader-1.0.0</tag>
     </scm>
 
     <licenses>
