@@ -1,4 +1,4 @@
-# Camel Assistant
+# Camel Data
 
 ## Trying it using Docker Compose
 
@@ -93,7 +93,7 @@ java -jar assistant-ui-vaadin/target/quarkus-app/quarkus-run.jar
 To load PDF data (such as those from documentation, books, etc) into the QDrant DB, use the command:
 
 ```shell
-cd assistant-cli && java -jar target/quarkus-app/quarkus-run.jar consume file /path/to/red_hat_build_of_apache_camel-4.0-tooling_guide-en-us.pdf
+cd camel-data-loader-cli && java -jar target/quarkus-app/quarkus-run.jar consume file /path/to/red_hat_build_of_apache_camel-4.0-tooling_guide-en-us.pdf
 ```
 NOTE: you can download some PDFs from [here](https://github.com/megacamelus/cai/tree/main/docs).
 
