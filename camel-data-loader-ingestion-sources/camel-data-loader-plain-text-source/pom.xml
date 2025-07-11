@@ -27,8 +27,8 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>plain-text-source</artifactId>
-    <name>Camel Data Loader :: Ingestion :: Sources :: Plain Text</name>
+    <artifactId>camel-data-loader-plain-text-source</artifactId>
+    <name>Camel Data Loader :: Ingestion :: Sources :: Plain Text Source</name>
 
     <properties>
         <quarkus.container-image.name>${project.artifactId}</quarkus.container-image.name>
