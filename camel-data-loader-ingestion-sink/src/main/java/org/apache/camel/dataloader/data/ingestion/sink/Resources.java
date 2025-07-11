@@ -30,7 +30,7 @@ public class Resources {
     @ConfigProperty(name = "camel.data.loader.embedding.provider.url", defaultValue = "http://localhost:8080")
     String embeddedProviderUrl;
 
-    @ConfigProperty(name = "camel.data.loader.embedding.provider.modelName", defaultValue = "nomic-embed-text:latest")
+    @ConfigProperty(name = "camel.data.loader.embedding.provider.model.name", defaultValue = "nomic-embed-text:latest")
     String modelName;
 
     @Produces
