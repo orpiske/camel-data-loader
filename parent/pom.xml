@@ -58,7 +58,7 @@
         <camel-quarkus.platform.version>${quarkus.platform.version}</camel-quarkus.platform.version>
 
         <langchain4j.version>1.8.0</langchain4j.version>
-        <picocli.version>4.7.5</picocli.version>
+        <picocli.version>4.7.7</picocli.version>
 
         <quarkus.container-image.registry>quay.io</quarkus.container-image.registry>
         <quarkus.container-image.group>orpiske</quarkus.container-image.group>
