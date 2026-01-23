@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.camel.dataloader.main;
+package net.orpiske.camel.dataloader.main;
 
 import io.quarkus.picocli.runtime.annotations.TopCommand;
 import net.orpiske.camel.dataloader.main.command.Consume;
