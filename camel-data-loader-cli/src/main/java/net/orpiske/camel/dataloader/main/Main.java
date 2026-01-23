@@ -27,9 +27,6 @@ public class Main implements Runnable {
 
     private static CommandLine commandLine;
 
-    @CommandLine.Option(names = {"--url"}, defaultValue = "http://localhost:8000/v1")
-    String baseUrl;
-
     @CommandLine.Option(names = { "-h", "--help" }, usageHelp = true, description = "Display the help and sub-commands")
     private boolean helpRequested = false;
 
