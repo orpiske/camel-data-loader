@@ -30,7 +30,7 @@
 
     <scm>
         <connection>scm:git:https://github.com/orpiske/camel-data-loader.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/orpiske/camel-data-loader.git</developerConnection>
+        <developerConnection>scm:git:https://github.com/orpiske/camel-data-loader.git</developerConnection>
         <url>https://github.com/orpiske/camel-data-loader</url>
         <tag>HEAD</tag>
     </scm>
