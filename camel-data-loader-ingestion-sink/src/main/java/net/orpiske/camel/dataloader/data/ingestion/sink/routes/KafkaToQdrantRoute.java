@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.camel.dataloader.data.ingestion.sink.routes;
+package net.orpiske.camel.dataloader.data.ingestion.sink.routes;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
