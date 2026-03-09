@@ -3,9 +3,7 @@ updates:
   - package-ecosystem: maven
     directory: "/"
     schedule:
-      interval: daily
-      time: "19:30"
-      timezone: Europe/Paris
+      interval: weekly
     labels:
       - area/dependencies
   - package-ecosystem: "github-actions"
